@@ -1,43 +1,62 @@
 {
-  "name": "gatsby-starter-default",
-  "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "name": "blog",
+  "description": "Jay's Blog",
+  "version": "0.0.0",
+  "author": "Jay Chen <gcobs135102@gmail.com>",
+  "keywords": [
+    "gatsby"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Jay0328/blog"
+  },
+  "bugs": {
+    "url": "https://github.com/Jay0328/blog/issues"
+  },
+  "scripts": {
+    "start": "npm run develop",
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "lint": "eslint . --config .eslintrc --ext .js,.ts,.tsx",
+    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "commit": "git-cz",
+    "release": "standard-version"
+  },
   "dependencies": {
-    "gatsby": "^2.17.6",
+    "gatsby": "^2.17.7",
     "gatsby-image": "^2.2.30",
-    "gatsby-plugin-manifest": "^2.2.25",
+    "gatsby-plugin-manifest": "^2.2.26",
     "gatsby-plugin-offline": "^3.0.17",
     "gatsby-plugin-react-helmet": "^3.1.13",
-    "gatsby-plugin-sharp": "^2.2.34",
+    "gatsby-plugin-sharp": "^2.2.36",
     "gatsby-source-filesystem": "^2.1.35",
-    "gatsby-transformer-sharp": "^2.3.1",
-    "prop-types": "^15.7.2",
+    "gatsby-transformer-sharp": "^2.3.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1"
   },
   "devDependencies": {
-    "prettier": "^1.18.2"
-  },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
-    "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "@commitlint/cli": "^8.2.0",
+    "@commitlint/config-conventional": "^8.2.0",
+    "@types/react": "^16.9.11",
+    "@types/react-dom": "^16.9.3",
+    "@typescript-eslint/eslint-plugin": "^2.6.0",
+    "@typescript-eslint/parser": "^2.6.0",
+    "commitizen": "^4.0.3",
+    "cz-conventional-changelog": "^3.0.2",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.16.0",
+    "eslint-plugin-react-hooks": "^2.2.0",
+    "husky": "^3.0.9",
+    "lint-staged": "^9.4.0",
+    "prettier": "^1.18.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "standard-version": "^7.0.0",
+    "typescript": "^3.6.4"
   }
 }
