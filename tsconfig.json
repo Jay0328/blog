@@ -3,19 +3,15 @@
     "target": "esnext",
     "module": "commonjs",
     "jsx": "react",
-    "noEmit": true, 
+    "noEmit": true,
     "strict": true,
-    "noImplicitAny": true, 
-    "noUnusedLocals": true, 
-    "noUnusedParameters": true, 
+    "noImplicitAny": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
     "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true, 
+    "allowSyntheticDefaultImports": true,
     "esModuleInterop": true
   },
-  "include": [
-    "src/"
-  ],
-  "exclude": [
-    "node_modules/"
-  ]
+  "include": ["src/"],
+  "exclude": ["node_modules/"]
 }

@@ -20,15 +20,20 @@
     "develop": "gatsby develop",
     "lint": "eslint . --config .eslintrc --ext .js,.ts,.tsx",
     "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "type-check": "tsc",
     "commit": "git-cz",
     "release": "standard-version"
   },
   "dependencies": {
     "gatsby": "^2.17.7",
     "gatsby-image": "^2.2.30",
+    "gatsby-plugin-catch-links": "^2.1.15",
+    "gatsby-plugin-layout": "^1.1.13",
     "gatsby-plugin-manifest": "^2.2.26",
+    "gatsby-plugin-nprogress": "^2.1.12",
     "gatsby-plugin-offline": "^3.0.17",
     "gatsby-plugin-react-helmet": "^3.1.13",
+    "gatsby-plugin-sass": "^2.1.20",
     "gatsby-plugin-sharp": "^2.2.36",
     "gatsby-plugin-typescript": "^2.1.15",
     "gatsby-source-filesystem": "^2.1.35",
@@ -58,10 +63,12 @@
     "eslint-plugin-react-hooks": "^2.2.0",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.0",
+    "node-sass": "^4.13.0",
     "prettier": "^1.18.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "standard-version": "^7.0.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.2"
   }
 }
