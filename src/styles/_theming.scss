@@ -1,0 +1,20 @@
+@mixin theme($name, $palette) {
+  .theme-#{$name} {
+    $primary: map-get($palette, primary);
+    $neutral: map-get($palette, neutral);
+
+    @each $name, $color in $primary {
+      @if $name == default {
+        --primary: #{$color};
+      } @else {
+        --primary-#{$name}: #{$color};
+      }
+    }
+
+    @each $level, $color in $neutral {
+      --neutral-#{$level}: #{$color};
+    }
+
+    @content;
+  }
+}

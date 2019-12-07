@@ -1,6 +1,6 @@
 {
   "name": "blog",
-  "description": "Jay's Blog",
+  "description": "Jay",
   "version": "0.0.0",
   "author": "Jay Chen <gcobs135102@gmail.com>",
   "keywords": [
@@ -18,13 +18,16 @@
     "start": "npm run develop",
     "build": "gatsby build",
     "develop": "gatsby develop",
-    "lint": "eslint . --config .eslintrc --ext .js,.ts,.tsx",
-    "format": "prettier --write \"**/*.{js,jsx,json,md}\"",
+    "lint:css": "stylelint ./**/*.scss --config .stylelintrc",
+    "lint:ts": "eslint . --config .eslintrc --ext .js,.ts,.tsx",
+    "lint": "npm run lint:ts && npm run lint:css",
+    "format": "prettier --write \"**/*.{js,jsx,scss,json,md}\"",
     "type-check": "tsc",
     "commit": "git-cz",
     "release": "standard-version"
   },
   "dependencies": {
+    "classnames": "^2.2.6",
     "gatsby": "^2.17.7",
     "gatsby-image": "^2.2.30",
     "gatsby-plugin-catch-links": "^2.1.15",
@@ -38,6 +41,7 @@
     "gatsby-plugin-typescript": "^2.1.15",
     "gatsby-source-filesystem": "^2.1.35",
     "gatsby-transformer-sharp": "^2.3.2",
+    "normalize.css": "^8.0.1",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-helmet": "^5.2.1"
@@ -47,6 +51,7 @@
     "@babel/preset-typescript": "^7.6.0",
     "@commitlint/cli": "^8.2.0",
     "@commitlint/config-conventional": "^8.2.0",
+    "@types/classnames": "^2.2.9",
     "@types/node": "^12.12.5",
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.9.3",
@@ -68,6 +73,11 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "standard-version": "^7.0.0",
+    "stylelint": "^12.0.0",
+    "stylelint-config-recommended-scss": "^4.1.0",
+    "stylelint-config-standard": "^19.0.0",
+    "stylelint-order": "^3.1.1",
+    "stylelint-scss": "^3.13.0",
     "typescript": "^3.6.4",
     "webpack": "^4.41.2"
   }

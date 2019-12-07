@@ -1,37 +1,46 @@
-import { Link } from 'gatsby';
 import React from 'react';
+import { useStaticQuery, Link, graphql } from 'gatsby';
+import './header.scss';
 
-export interface HeaderProps {
-  siteTitle?: string;
+export interface SiteTitleQuery {
+  site: {
+    siteMetadata: {
+      title: string;
+    };
+  };
 }
 
-const Header = ({ siteTitle }: HeaderProps) => (
-  <header
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-    </div>
-  </header>
-);
+export interface HeaderProps {
+  toggleMenu: () => void;
+}
+
+function Header({ toggleMenu }: HeaderProps) {
+  const data = useStaticQuery<SiteTitleQuery>(graphql`
+    query SiteTitleQuery {
+      site {
+        siteMetadata {
+          ...SiteTitleFragment
+        }
+      }
+    }
+  `);
+
+  return (
+    <nav className="header">
+      <svg
+        className="header__menu-toggler"
+        viewBox="0 0 24 24"
+        focusable="false"
+        fill="currentColor"
+        onClick={toggleMenu}
+      >
+        <g>
+          <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z" />
+        </g>
+      </svg>
+      <Link to="/">{data.site.siteMetadata.title}</Link>
+    </nav>
+  );
+}
 
 export default Header;

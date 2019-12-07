@@ -1,0 +1,18 @@
+@import '../../styles/variables';
+
+.menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  padding: 90px 17px 40px 24px;
+  background: var(--neutral-9);
+  transform: translateX(-100%);
+  transition: all 0.2s cubic-bezier(0.7, 0, 0.3, 1);
+  overflow: hidden;
+  z-index: index($z-index-elements, menu);
+
+  &--open {
+    transform: translateX(0);
+  }
+}

@@ -1,8 +1,10 @@
 module.exports = {
   siteMetadata: {
-    title: `Jay's Blog`,
+    title: `Jay`,
     description: `Blog - Jay`,
-    author: `Jay`
+    author: `Jay`,
+    facebook: `https://www.facebook.com/yuchieh.chen.taku`,
+    github: `https://github.com/Jay0328`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -28,7 +30,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Jay's Blog`,
+        name: `Jay`,
         short_name: `Jay`,
         start_url: `/`,
         background_color: `#663399`,
