@@ -1,3 +1,13 @@
+$xs: 480px;
+$sm: 576px;
+$md: 767px;
+$lg: 992px;
+$xl: 1200px;
+
 $header-height: 56px;
+$menu-width: 250px;
+$menu-width-xs: 100%;
+
+$menu-transition: all 0.2s cubic-bezier(0.7, 0, 0.3, 1);
 
 $z-index-elements: (menu, header);

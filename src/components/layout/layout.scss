@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+.layout {
+  &__container {
+    width: 100%;
+
+    @media only screen and (min-width: #{$md + 1px}) {
+      &--collapsed {
+        width: calc(100% - #{$menu-width});
+        margin-left: $menu-width;
+      }
+    }
+
+    transition: $menu-transition;
+  }
+}
