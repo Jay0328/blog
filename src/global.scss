@@ -1,0 +1,4 @@
+@import './styles/theming';
+@import './styles/palette';
+
+@include theme(blue, $palette-blue);

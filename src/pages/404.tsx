@@ -1,14 +1,45 @@
 import React from 'react';
-
-import Layout from '../components/layout';
+import { Link, graphql } from 'gatsby';
 import SEO from '../components/seo';
 
-const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
-  </Layout>
-);
+export interface PageQuery {
+  allSitePage: {
+    edges: {
+      node: {
+        path: string;
+      };
+    }[];
+  };
+}
+
+export interface NotFoundPageProps {
+  data: PageQuery;
+}
+
+export const pageQuery = graphql`
+  query AllPagePaths {
+    allSitePage {
+      edges {
+        node {
+          path
+        }
+      }
+    }
+  }
+`;
+
+const NotFoundPage = ({ data }: NotFoundPageProps) => {
+  return (
+    <div>
+      <SEO title="404: Not found" />
+      <h4>找不到你的網頁，本站所有頁面為：</h4>
+      {data.allSitePage.edges.map(page => (
+        <Link to={page.node.path} key={page.node.path}>
+          <li>{page.node.path}</li>
+        </Link>
+      ))}
+    </div>
+  );
+};
 
 export default NotFoundPage;
