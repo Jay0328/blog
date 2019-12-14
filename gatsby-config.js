@@ -12,13 +12,59 @@ module.exports = {
     `gatsby-plugin-sass`,
     `gatsby-plugin-catch-links`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: 'gatsby-plugin-nprogress',
       options: {
-        name: 'content',
-        path: `${__dirname}/src/content`
+        color: '#663399'
       }
     },
-    `gatsby-plugin-nprogress`,
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: `${__dirname}/src/pages`
+      }
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'content',
+        path: `${__dirname}/content/`
+      }
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          'gatsby-remark-responsive-iframe',
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              maxWidth: 840
+            }
+          },
+          'gatsby-remark-external-links',
+          'gatsby-remark-autolink-headers',
+          /*
+          {
+            resolve: 'gatsby-remark-embed-snippet',
+            options: {
+              classPrefix: 'gatsby-code-',
+              directory: `${__dirname}/examples/`
+            }
+          },
+          */
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              // classPrefix: 'gatsby-code-',
+              showLineNumbers: true
+            }
+          },
+          'gatsby-remark-copy-linked-files',
+          'gatsby-remark-smartypants'
+        ]
+      }
+    },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
